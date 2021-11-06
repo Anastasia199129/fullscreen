@@ -1,0 +1,729 @@
+body {
+  background: #000000;
+}
+.title {
+  display: none;
+}
+
+.wrapper-notAvailable {
+  display: block;
+  width: 100vh;
+  height: 100vh;
+}
+.wrapper-notAvailable-none {
+  display: none;
+}
+
+.notAvailable {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/*/////loader//////*/
+
+.loader {
+  display: block;
+  opacity: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  z-index: 2;
+}
+
+@keyframes loaderNone {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader-none {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  z-index: 2;
+  animation-name: loaderNone;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  display: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-img {
+  width: 100%;
+  height: 100%;
+  animation-name: rotate;
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*/////loader END//////*/
+
+.container {
+  position: relative;
+  width: 360px;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  overflow: scroll;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  .wrapper {
+    width: 440px;
+    height: 676px;
+  }
+}
+
+/*/////////keyframes///////////*/
+
+@keyframes active {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.active {
+  display: block;
+  opacity: 1;
+  animation-name: active;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinBtn {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rtansf {
+  0% {
+    transform: translateY(-280px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes transfNew {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  80% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes transProduct {
+  0% {
+    transform: translateX(140%);
+  }
+
+  50% {
+    transform: translateX(140%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes nextProduct {
+  0% {
+    transform: translateX(0%);
+  }
+
+  /* 50% {
+    transform: translateX(140%);
+  } */
+
+  100% {
+    transform: translateX(-140%);
+  }
+}
+
+.nextProductKeyframes {
+  position: absolute;
+  z-index: 1;
+  top: 48%;
+  left: 21%;
+  transform: translateX(130%);
+  width: 200px;
+  animation-name: nextProduct;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scaleTagline {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shopNowImg {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*//////// pepermint ////////*/
+
+.new-img {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 60px;
+  animation-name: rtansf;
+  animation-duration: 1500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.new-img-static {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 60px;
+}
+
+.shopNowImg {
+  position: absolute;
+  opacity: 1;
+  bottom: 30px;
+  left: 52%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  animation-name: shopNowImg;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.shopNowImg-static {
+  position: absolute;
+  opacity: 1;
+  bottom: 30px;
+  left: 52%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+}
+
+.product-img {
+  position: absolute;
+  z-index: 1;
+  top: 48%;
+  left: 21%;
+  transform: translateX(130%);
+  width: 200px;
+  animation-name: transProduct;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.tagline-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  animation-name: rtansf;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.pepermint-tagline {
+  position: absolute;
+  top: 100px;
+  left: 37px;
+  width: 230px;
+  animation-name: scaleTagline;
+  animation-duration: 1500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.pepermint-1 {
+  position: absolute;
+  bottom: 58px;
+  left: 3px;
+  width: 169px;
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.pepermint-2 {
+  position: absolute;
+  bottom: -40px;
+  right: -38px;
+  width: 120px;
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.seed-1 {
+  position: absolute;
+  bottom: 83px;
+  right: 25px;
+  width: 30px;
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.seed-2 {
+  position: absolute;
+  bottom: 196px;
+  right: -23px;
+  width: 35px;
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.strawberry-1 {
+  position: absolute;
+  top: 240px;
+  left: -65px;
+  width: 140px;
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.strawberry-2 {
+  position: absolute;
+  top: 260px;
+  right: -5px;
+  width: 132px;
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@media screen and (min-width: 480px) {
+  .pepermint-tagline {
+    top: 115px;
+    left: 51px;
+    width: 320px;
+    height: 115px;
+  }
+
+  .product-img {
+    width: 230px;
+    top: 47.5%;
+    left: 26%;
+  }
+
+  .shopNowImg {
+    width: 150px;
+  }
+
+  .shopNowImg-static {
+    width: 150px;
+  }
+
+  .tagline-back {
+    width: 440px;
+    height: 40%;
+  }
+
+  .pepermint-1 {
+    bottom: 58px;
+    left: 38px;
+    width: 200px;
+  }
+
+  .pepermint-2 {
+    bottom: -45px;
+    right: -42px;
+    width: 140px;
+  }
+
+  .seed-1 {
+    bottom: 90px;
+    right: 60px;
+    width: 33px;
+  }
+
+  .seed-2 {
+    bottom: 226px;
+    right: -22px;
+    width: 35px;
+  }
+
+  .strawberry-1 {
+    top: 283px;
+    left: -70px;
+    width: 150px;
+  }
+
+  .strawberry-2 {
+    position: absolute;
+    top: 290px;
+    right: 30px;
+    width: 151px;
+  }
+}
+
+/*/////////// raspberry //////////*/
+.raspberry-tagline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 310px;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.lemon-img {
+  position: absolute;
+  width: 184px;
+  left: -29px;
+  bottom: 8px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.raspberry3-img {
+  position: absolute;
+  width: 115px;
+  left: -35px;
+  top: 200px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.petal2 {
+  position: absolute;
+  width: 62px;
+  left: 40px;
+  bottom: 257px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.petal3 {
+  position: absolute;
+  width: 95px;
+  top: 320px;
+  left: -50px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.petal4 {
+  position: absolute;
+  width: 95px;
+  top: 370px;
+  right: 17px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.petal5 {
+  position: absolute;
+  width: 95px;
+  top: 242px;
+  right: -30px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.respderry2-img {
+  position: absolute;
+  width: 92px;
+  top: 250px;
+  left: 172px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.respderry1-img {
+  position: absolute;
+  width: 110px;
+  top: 296px;
+  left: 195px;
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@media screen and (min-width: 480px) {
+  .raspberry-tagline {
+    width: 430px;
+    height: 42%;
+  }
+
+  .lemon-img {
+    width: 212px;
+    left: 3px;
+    bottom: 4px;
+  }
+
+  .raspberry3-img {
+    width: 130px;
+    left: -35px;
+    top: 220px;
+  }
+
+  .petal2 {
+    width: 75px;
+    left: 80px;
+    bottom: 290px;
+  }
+
+  .petal3 {
+    width: 95px;
+    top: 355px;
+    left: -50px;
+  }
+
+  .petal4 {
+    width: 105px;
+    top: 418px;
+    right: 54px;
+  }
+
+  .petal5 {
+    width: 105px;
+    top: 240px;
+    right: -32px;
+  }
+
+  .respderry2-img {
+    width: 105px;
+    top: 278px;
+    left: 236px;
+  }
+
+  .respderry1-img {
+    position: absolute;
+    width: 125px;
+    top: 328px;
+    left: 265px;
+  }
+}
+
+/*////// peach /////////*/
+
+.peach-tagline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 310px;
+}
+
+.orange-img {
+  position: absolute;
+  bottom: 57px;
+  left: -4px;
+  width: 145px;
+  animation-name: spin;
+  animation-duration: 800ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.peach-img {
+  position: absolute;
+  top: 233px;
+  right: 28px;
+  width: 110px;
+  animation-name: spin;
+  animation-duration: 800ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@media screen and (min-width: 480px) {
+  .peach-tagline {
+    width: 428px;
+    height: 42%;
+  }
+
+  .peach-img {
+    top: 259px;
+    right: 68px;
+    width: 125px;
+  }
+
+  .orange-img {
+    bottom: 58px;
+    left: 30px;
+    width: 170px;
+  }
+}
+
+/*////// button/////*/
+
+.nextBtn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  top: 60%;
+  right: 10px;
+  width: 30px;
+  animation-name: spinBtn;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.prevBtn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  top: 60%;
+  left: 10px;
+  width: 30px;
+  animation-name: spinBtn;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.imgPrev {
+  width: 100%;
+  height: auto;
+}
+
+.imgNext {
+  width: 100%;
+  height: auto;
+}
