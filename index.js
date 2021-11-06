@@ -68,9 +68,17 @@ const onBtnPrevClick = () => {
   }
 };
 
-window.addEventListener('orientationchange', function () {
-  notAvailable.classList.remove('wrapper-notAvailable-none');
-});
+function onOrientationchange() {
+  return notAvailable.classList.remove('wrapper-notAvailable-none');
+}
+
+if (window.screen.height < window.screen.width) {
+  window.addEventListener('orientationchange', onOrientationchange);
+}
+
+if (window.screen.height > window.screen.width) {
+  window.removeEventListener('orientationchange', onOrientationchange);
+}
 
 next.addEventListener('click', onBtnNextClick);
 prev.addEventListener('click', onBtnPrevClick);
