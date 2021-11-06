@@ -3,8 +3,10 @@ const next = document.getElementById('next');
 const slides = document.querySelectorAll('.slide');
 const productsImg = document.querySelectorAll('.product-img');
 const loader = document.querySelector('.loader-none');
-const container = document.querySelector('.container');
+const wrapper = document.querySelector('.wrapper');
 const notAvailable = document.querySelector('.wrapper-notAvailable-none');
+
+console.log(wrapper);
 
 let index = 0;
 
@@ -68,8 +70,19 @@ const onBtnPrevClick = () => {
   }
 };
 
-function onOrientationchange() {
-  return notAvailable.classList.remove('wrapper-notAvailable-none');
+function onOrientationchange(e) {
+  e.preventDefault();
+  if (window.screen.height < window.screen.width) {
+    wrapper.classList.remove('wrapper');
+    wrapper.classList.add('wrapper-notAvailable-none');
+    notAvailable.classList.remove('wrapper-notAvailable-none');
+  }
+
+  if (window.screen.height > window.screen.width) {
+    wrapper.classList.remove('wrapper-notAvailable-none');
+    wrapper.classList.add('wrapper');
+    notAvailable.classList.add('wrapper-notAvailable-none');
+  }
 }
 
 if (window.screen.height < window.screen.width) {
